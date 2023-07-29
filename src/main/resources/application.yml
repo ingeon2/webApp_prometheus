@@ -5,15 +5,15 @@ spring:
 management:
   endpoint:
     metrics:
-      enabled: true  # ????? ???
+      enabled: true  # 프로메테우스 사용 설정
     prometheus:
       enabled: true
 
   endpoints:
     web:
       exposure:
-        include: health, info, metrics, prometheus # ?? ??? ?? ????? ???
+        include: health, info, metrics, prometheus # 프로메테우스가 해당 정보들을 수집한다
 
   metrics:
     tags:
-      application: ${spring.application.name} # ??? ?????? ?? ??
+      application: ${spring.application.name} # 위에서 설정해준 monitoring 사용
